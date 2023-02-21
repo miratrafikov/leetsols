@@ -7,10 +7,6 @@
  * }
  */
 func isBalanced(root *TreeNode) bool {
-    if root == nil {
-        return true
-    }
-
     return determineMaxDepth(root) != -1
 }
 
