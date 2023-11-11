@@ -1,7 +1,7 @@
 func moveZeroes(nums []int)  {
     i := 0
     j := 1
-    for i < len(nums) && j < len(nums) {
+    for j < len(nums) {
         if nums[i] != 0 {
             i++
         } else if nums[j] != 0 {
