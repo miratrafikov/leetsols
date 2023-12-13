@@ -6,7 +6,6 @@ func groupAnagrams(strs []string) [][]string {
         for _, letter := range s {
             lettersCountInS[int(letter) - int('a')] += 1
         }
-        fmt.Println(lettersCountInS)
         descriptor := ""
         for i, count := range lettersCountInS {
             for j := 0; j < count; j++ {
