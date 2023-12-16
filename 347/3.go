@@ -1,4 +1,4 @@
-// using array-based heap. For educational purposes only
+// using array-based priority queue. For educational purposes only
 type NumberAndFrequency struct {
     Number    int
     Frequency int
