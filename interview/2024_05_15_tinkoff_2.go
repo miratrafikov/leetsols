@@ -8,16 +8,24 @@ type Range struct {
 
 func main() {
 	var ranges []Range
-	ranges = []Range{
-		{a:0, b:1},
-		{a:0, b:2},
-		{a:1, b:3},
-		{a:1, b:4},
+	_ = []Range{
+		{a: 0, b: 1},
+		{a: 0, b: 2},
+		{a: 1, b: 3},
+		{a: 1, b: 4},
 	}
 	_ = []Range{
-		{a:1, b:2},
-		{a:2, b:4},
-		{a:3, b:6},
+		{a: 1, b: 2},
+		{a: 2, b: 4},
+		{a: 3, b: 6},
+	}
+	ranges = []Range{
+		{a: 1, b: 2},
+		{a: 1, b: 10},
+		{a: 4, b: 9},
+		{a: 8, b: 15},
+		{a: 5, b: 6},
+		{a: 8, b: 16},
 	}
 	fmt.Println(countOverlappingRanges(ranges))
 }
@@ -46,7 +54,7 @@ func countOverlappingRanges(ranges []Range) int {
 	for x := ranges[0].a; x < maxX; x++ {
 		// ищем количество диапазонов, начинающихся в X, и увеличиваем currOverlap на это количество, сдвигая r
 		rangesStartingHere := 0
-		for r + 1 < len(ranges) && ranges[r + 1].a == x {
+		for r+1 < len(ranges) && ranges[r+1].a == x {
 			r++
 			rangesStartingHere++
 		}
