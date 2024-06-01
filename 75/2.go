@@ -9,8 +9,11 @@ func sortColors(nums []int)  {
     i := 0
     for i <= positionBefore2s {
         // we strive for the following loop invariant at the end of each iteration:
-        //  - there is a cluster of 0s that ends at positionAfter0s - 1
-        //  - there is a cluster of 2s that starts at positionBefore2s + 1
+        //  - there is a cluster of 0s that ends at positionAfter0s-1
+        //  - there is a cluster of 2s that starts at positionBefore2s+1
+        //  - there is a cluster of 1s that starts at positionAfter0s and ends at i-1
+        //  - there is an unvisited portion starting at i and ending at positionBefore2s
+        //  - 0000|1|02102|222222    
         switch nums[i] {
         case 2:
             nums[positionBefore2s], nums[i] = nums[i], nums[positionBefore2s]
